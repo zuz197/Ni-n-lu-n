@@ -4,7 +4,7 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState('');
 
-  // Load từ Local Storage khi app khởi động
+  // Load từ Local Storage
   useEffect(() => {
     const data = localStorage.getItem('todos');
     if (data) {
@@ -12,7 +12,7 @@ function App() {
     }
   }, []);
 
-  // Lưu vào Local Storage mỗi khi todos thay đổi
+  // Lưu vào Local Storage
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos));
   }, [todos]);
